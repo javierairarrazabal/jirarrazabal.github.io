@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Notifications</title>
+</head>
+<body>
+    <h2>Push Notifications</h2>
+    <p id="token"></p>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-messaging.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyBUiHpINxie7OV1Rx_wfFybKtBoyJV-N8g",
+            authDomain: "pwitter-19436.firebaseapp.com",
+            databaseURL: "https://pwitter-19436-default-rtdb.firebaseio.com/",
+            projectId: "pwitter-19436",
+            storageBucket: "pwitter-19436.appspot.com",
+            messagingSenderId: "1089970872567",
+            appId: "1:1089970872567:web:30396cfe1f2e05893a73f2",
+            measurementId: "G-G6BFZ76B52"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const messaging=firebase.messaging();
+    
+        function IntitalizeFireBaseMessaging() {
+            messaging
+                .requestPermission()
+                .then(function () {
+                    console.log("Notification Permission");
+                    return messaging.getToken();
+                })
+                .then(function (token) {
+                    console.log("Token : "+token);
+                    document.getElementById("token").innerHTML=token;
+                })
+                .catch(function (reason) {
+                    console.log(reason);
+                });
+        }
+    
+        messaging.onMessage(function (payload) {
+            console.log(payload);
+            const notificationOption={
+                body:payload.notification.body,
+                icon:payload.notification.icon
+            };
+    
+            if(Notification.permission==="granted"){
+                var notification=new Notification(payload.notification.title,notificationOption);
+    
+                notification.onclick=function (ev) {
+                    ev.preventDefault();
+                    window.open(payload.notification.click_action,'_blank');
+                    notification.close();
+                }
+            }
+    
+        });
+        messaging.onTokenRefresh(function () {
+            messaging.getToken()
+                .then(function (newtoken) {
+                    console.log("New Token : "+ newtoken);
+                })
+                .catch(function (reason) {
+                    console.log(reason);
+                })
+        })
+        IntitalizeFireBaseMessaging();
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sign In - Pwitter</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- <link rel="manifest" href="/manifest.json" /> -->
+    <!-- <link rel="apple-touch-icon" href="images/pwa-icon-256.png" /> -->
+    <meta name="theme-color" content="white" />
+  </head>
+  <body>
+      <div class="container">
+          <div id="welcome">
+              <h1>Sign In</h1>
+          </div>
+          <div class="form">
+            <input class="sign-input" id="username" placeholder="Username">
+            <input class="sign-input" id="email" placeholder="Email">
+            <input class="sign-input" type="password" id="password" placeholder="Password">
+            <!-- <button class="submit" id="signin">Sign In</button> -->
+            <a class="submit" id="signin" href="pweets.html" role="button">Sign In</a>
+          </div>
+      </div>
+  <!-- <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./firebase-messaging-sw.js").then((registration) => {
+        console.log("Fue registrado con scope: ", registration.scope)
+      }).catch((e) => {
+        console.log("Service worker failed", e)
+      })
+    }
+  </script> -->
+  <script src="main.js"></script>
+  </body>
+</html>

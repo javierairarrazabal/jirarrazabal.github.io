@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Pwitter - My Profile</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- <link rel="manifest" href="/manifest.json" /> -->
+    <!-- <link rel="apple-touch-icon" href="images/pwa-icon-256.png" /> -->
+    <meta name="theme-color" content="white" />
+  </head>
+  <body>
+      <div class="window-container">
+        <div class="navbar">
+            <span class="title">MY PROFILE</span>
+            <span class="buttons-navbar">
+                <a class="btn-navbar" id="home" href="pweets.html" role="button">Home</a>
+                <a class="btn-navbar" id="logout" href="signin.html" role="button">Log Out</a>
+            </span>
+        </div>
+        <div class="container-home">
+            <div class="profile">
+                <img alt="profile picture" src="images/profile.png">
+            </div>
+            <main></main>
+        </div>
+      </div>
+  
+    
+    
+        
+  <!-- <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./firebase-messaging-sw.js").then((registration) => {
+        console.log("Fue registrado con scope: ", registration.scope)
+      }).catch((e) => {
+        console.log("Service worker failed", e)
+      })
+    }
+  </script> 
+
+  <script>
+          if('serviceWorker' in navigator) {
+              navigator.serviceWorker.register('./service-worker.js');
+          };
+      </script>-->
+    
+  <script src="profile.js"></script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Pwitter - Home</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="manifest" href="/manifest.json" />
+    <script defer src="/__/firebase/8.6.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+    <!-- <link rel="apple-touch-icon" href="images/pwa-icon-256.png" /> -->
+    <meta name="theme-color" content="white" />
+  </head>
+  <body>
+      <div class="window-container">
+        <div class="navbar">
+            <span class="title">PWEETS</span>
+            <span class="buttons-navbar">
+                <a class="btn-navbar" id="profile" href="profile.html" role="button">My Profile</a>
+                <a class="btn-navbar" id="logout" href="signin.html" role="button">Log Out</a>
+            </span>
+        </div>
+
+        <div class="container-home">
+          <div class="card-pweet"> <input id="publisher" class="sign-input" placeholder="email"></div> 
+          <div class="card-pweet"> <input id="message" class="sign-input" placeholder="Tell the world..."></div> 
+          <div class="card-pweet"> <button  id="publish" class="sign">Publish</button></div> 
+
+           
+ 
+            <h3>Explore Pweets</h3>
+            <main></main>
+        </div>
+      </div>
+        
+  <!-- <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./firebase-messaging-sw.js").then((registration) => {
+        console.log("Fue registrado con scope: ", registration.scope)
+      }).catch((e) => {
+        console.log("Service worker failed", e)
+      })
+    }
+  </script> -->
+  <script src="pweets.js"></script>
+  </body>
+</html>
